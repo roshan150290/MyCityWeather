@@ -24,7 +24,7 @@ interface ApiServices {
     fun getCurrentWeather(
        /* @Body body: JsonObject*/
         @Query("q") q: String?,
-       // @Query("units") units: String?,
+       @Query("units") units: String?,
       //  @Query("lang") lang: String?,
         @Query("appid") appId: String?
     ): Call<CurrentWeatherResponse>?
@@ -34,7 +34,7 @@ interface ApiServices {
     fun getCurrentCityWeather(
         /* @Body body: JsonObject*/
         @Query("q") q: String?,
-        // @Query("units") units: String?,
+         @Query("units") units: String?,
         //  @Query("lang") lang: String?,
         @Query("appid") appId: String?
     ): Call<CurrentWeatherResponse>?
@@ -56,7 +56,7 @@ interface ApiServices {
     @GET("forecast")
     fun getFiveDaysWeather(
         @Query("q") q: String?,
-       // @Query("units") units: String?,
+       @Query("units") units: String?,
       //  @Query("lang") lang: String?,
         @Query("appid") appId: String?
     ): Call<FiveDayResponse>?
@@ -72,7 +72,7 @@ interface ApiServices {
     @GET("forecast/daily")
     fun getMultipleDaysWeather(
         @Query("q") q: String?,
-       // @Query("units") units: String?,
+       @Query("units") units: String?,
        // @Query("lang") lang: String?,
        // @Query("cnt") dayCount: Int,
         @Query("appid") appId: String?

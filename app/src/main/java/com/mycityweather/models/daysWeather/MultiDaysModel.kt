@@ -33,7 +33,7 @@ class MultiDaysModel : MultiDaysContarct.Model {
     ) {
 
 
-        call = RestClient.getInstance().getApiService().getMultipleDaysWeather(city,appid)
+        call = RestClient.getInstance().getApiService().getMultipleDaysWeather(city,unit,appid)
 
         call?.enqueue(object : Callback<MultipleDaysWeatherResponse> {
             override fun onFailure(call: Call<MultipleDaysWeatherResponse>, t: Throwable) {

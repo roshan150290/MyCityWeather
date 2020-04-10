@@ -34,7 +34,7 @@ class FiveDaysWeatherModel : FiveDaysWeatherContract.Model {
     ) {
 
 
-        call = RestClient.getInstance().getApiService().getFiveDaysWeather(city,  appid)
+        call = RestClient.getInstance().getApiService().getFiveDaysWeather(city, unit, appid)
 
         call?.enqueue(object : Callback<FiveDayResponse> {
             override fun onFailure(call: Call<FiveDayResponse>, t: Throwable) {

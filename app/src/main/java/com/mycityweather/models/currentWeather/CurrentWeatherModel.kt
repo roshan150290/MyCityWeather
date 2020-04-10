@@ -58,7 +58,7 @@ class CurrentWeatherModel : CurrentWeatherContract.Model
         }
 */
 
-        call = RestClient.getInstance().getApiService().getCurrentWeather(city, appid)
+        call = RestClient.getInstance().getApiService().getCurrentWeather(city, unit,appid)
 
         call?.enqueue(object : Callback<CurrentWeatherResponse> {
             override fun onFailure(call: Call<CurrentWeatherResponse>, t: Throwable) {
