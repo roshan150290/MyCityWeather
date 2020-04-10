@@ -1,6 +1,5 @@
-# Weather app
+# MyCityWeather
 
-[![Build Status](https://travis-ci.org/bkhezry/weather.svg?branch=master)](https://travis-ci.org/bkhezry/weather)
 
 <p align="center"><img src="assets/screenshot-1.png" /></p>
 
@@ -19,6 +18,10 @@
 **Screenshot**
 
 <p align="center"><img src="assets/screenshot-2.png" /></p>
+<p align="center"><img src="assets/screenshot-3.png" /></p>
+<p align="center"><img src="assets/screenshot-4.png" /></p>
+<p align="center"><img src="assets/screenshot-5.png" /></p>
+
 
 **Libraries & Dependencies**
 - [Support libraries]: appcompat / recyclerview / constraintlayout
@@ -27,6 +30,10 @@
 - Square [Retrofit] / [Okhttp] / [Logging-Interceptor]
 - [Glide]: An image loading and caching library for Android focused on smooth scrolling
 - [Lottie-Android]: Render After Effects animations natively on Android
+
+
+**Sample App**
+
 
 **Credit**
 
