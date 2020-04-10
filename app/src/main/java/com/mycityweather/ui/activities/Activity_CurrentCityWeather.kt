@@ -1,9 +1,11 @@
 package com.mycityweather.ui.activities
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.IntentFilter
 import android.location.Address
 import android.location.Geocoder
+import android.location.Location
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +24,7 @@ import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.adapters.ItemAdapter
 import com.mikepenz.fastadapter.listeners.OnClickListener
 import com.mycityweather.R
+import com.mycityweather.locationHelper.MyLocation
 import com.mycityweather.models.currentWeather.CurrentWeatherContract
 import com.mycityweather.models.currentWeather.CurrentWeatherPresenter
 import com.mycityweather.models.currentWeather.CurrentWeatherResponse
@@ -119,7 +122,68 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
 
         if(Constants.city.toString().equals(""))
         {
-            getCity()
+
+            /**
+             * Fetch Current Location
+             * */
+            MyLocation(this@Activity_CurrentCityWeather, object: MyLocation.MyLocationCallBack{
+                @SuppressLint("WrongConstant", "ShowToast")
+                override fun permissionDenied() {
+
+                    Log.i("Location_", "permission  denied")
+
+                    Toast.makeText(applicationContext,"You denied GPS Location permission." +
+                            "\nPlease allow first GPS Location permission",2000).show()
+                    Toast.LENGTH_LONG
+                    spfs.save("is_location",false)
+
+                }
+
+                override fun locationSettingFailed() {
+
+                    Log.i("Location_", "setting failed")
+                    spfs.save("is_location",false)
+
+
+                }
+
+                override fun getLocation(location: Location) {
+
+                    Log.i("Location_lat_lng"," latitude ${location?.latitude} longitude ${location?.longitude}")
+
+                    // tvLocation.text = " latitude ${location?.latitude}, longitude ${location?.longitude}"
+                    spfs.save("latitude",location?.latitude.toString())
+                    spfs.save("longitude",location?.longitude.toString())
+                    spfs.save("is_location",true)
+
+                    val lat:Double = spfs.getString("latitude").toString().toDouble();
+                    val long:Double = spfs.getString("longitude").toString().toDouble();
+
+                    val geocoder = Geocoder(applicationContext, Locale.getDefault())
+                    val addresses: List<Address> =
+                        geocoder.getFromLocation(lat, long, 1)
+                    val cityName: String = addresses[0].locality.toString()
+                    spfs.save("cityName",cityName.toString())
+
+                    val stateName: String = addresses[0].subLocality
+                    spfs.save("stateName",stateName.toString())
+
+                    val countryName: String = addresses[0].countryName
+                    spfs.save("countryName",countryName.toString())
+
+                    Log.i("cityName", " city $cityName $stateName $countryName")
+                    //getCity()
+                    apiKey = resources.getString(R.string.open_weather_map_api)
+
+                    requestWeather(cityName, apiKey!!)
+
+                }
+            })
+
+
+
+
+
 
         }
         else
@@ -173,9 +237,6 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
         Log.i("cityName", " city $cityName $stateName $countryName")
 
 
-        apiKey = resources.getString(R.string.open_weather_map_api)
-
-        requestWeather(cityName, apiKey!!)
 
     }
 
