@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.activities.Activity_CurrentCityWeather">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--<include layout="@layout/toolbar" />-->
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/action_bar"
+            android:elevation="@dimen/_2sdp"
+            android:outlineProvider="background"
+            android:outlineAmbientShadowColor="@color/shadowColor"
+            android:outlineSpotShadowColor="@color/shadowColor"
+
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/AppTheme.PopupOverlay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="visible"
+
+            >
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:id="@+id/card_email"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+
+
+                android:outlineAmbientShadowColor="@color/shadowColor"
+
+                android:outlineSpotShadowColor="@color/shadowColor"
+                app:cardBackgroundColor="@android:color/white"
+
+                app:cardCornerRadius="@dimen/_12sdp"
+                app:cardElevation="@dimen/_7sdp"
+                app:cardUseCompatPadding="false">
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_arrow_left"
+                    android:scaleType="fitCenter"
+                    android:visibility="visible"
+                    android:padding="6dp"
+                    android:onClick="On_Back"
+                    />
+                <ImageView
+                    android:id="@+id/img_drawer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_group_179"
+                    android:padding="6dp"
+                    android:visibility="gone"
+                    android:scaleType="fitCenter"
+
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+            <TextView
+                android:id="@+id/city_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_55sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Forecast Weather"
+                android:visibility="visible"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_15sdp"
+                android:paddingTop="@dimen/_2sdp"
+                />
+
+
+
+            <!--<ImageView
+                android:id="@+id/img_zon"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/card_email"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                app:srcCompat="@drawable/ic_black_logo"
+                android:visibility="visible"
+                />
+    -->
+
+
+        </RelativeLayout>
+
+        <include layout="@layout/content_empty" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include layout="@layout/content_main" />
+
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bar"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                app:backgroundTint="?attr/colorPrimary"
+                app:navigationIcon="@drawable/ic_menu_black_24dp" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/next_days_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:backgroundTint="@color/material_blue"
+                app:layout_anchor="@id/bar"
+                app:strokeColor="@android:color/white" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

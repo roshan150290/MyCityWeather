@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    tools:context=".ui.activities.Activity_SearchCities">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/action_bar"
+        android:elevation="@dimen/_2sdp"
+        android:outlineProvider="background"
+        android:outlineAmbientShadowColor="@color/shadowColor"
+        android:outlineSpotShadowColor="@color/shadowColor"
+
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/AppTheme.PopupOverlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+
+        >
+
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:id="@+id/card_email"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+
+
+            android:outlineAmbientShadowColor="@color/shadowColor"
+
+            android:outlineSpotShadowColor="@color/shadowColor"
+            app:cardBackgroundColor="@android:color/white"
+
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:cardElevation="@dimen/_7sdp"
+            app:cardUseCompatPadding="false">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_group_180"
+                android:scaleType="center"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:id="@+id/img_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_group_179"
+                android:padding="6dp"
+                android:visibility="visible"
+                android:scaleType="fitCenter"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+        <TextView
+            android:id="@+id/txt_titles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_55sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Forecast Weather"
+            android:visibility="visible"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_15sdp"
+            android:paddingTop="@dimen/_2sdp"
+            />
+
+
+
+        <!--<ImageView
+            android:id="@+id/img_zon"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/card_email"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_black_logo"
+            android:visibility="visible"
+            />
+-->
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/content_empty" />
+
+
+    <TextView
+        android:id="@+id/txt_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What would you like to\nsearch weather for different cities? "
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/shadowColor"
+        android:textStyle="normal"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/txt_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search below. "
+        app:layout_constraintTop_toBottomOf="@+id/txt_acc"
+
+        android:layout_marginTop="@dimen/_2sdp"
+        android:textColor="@color/shadowColor"
+        android:textStyle="bold"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+
+
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/card_view_serch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        app:cardUseCompatPadding="false"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_18sdp"
+        app:cardBackgroundColor="@android:color/white"
+        android:outlineAmbientShadowColor="@color/shadowColor"
+        android:outlineSpotShadowColor="@color/shadowColor"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="@dimen/_6sdp"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp">
+
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:padding="05dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_search"
+                android:tint="@color/shadowColor"
+                android:layout_gravity="center"/>
+
+
+
+
+            <EditText
+                android:id="@+id/input_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="05dp"
+                android:layout_weight="0.40"
+                android:drawableTint="@android:color/white"
+                android:gravity="start"
+                android:hint="Search Cities "
+                android:padding="05dp"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:textColorHint="@color/shadowColor"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <ImageView
+                android:id="@+id/img_pluse"
+                android:layout_weight="0.05"
+                android:padding="05dp"
+                android:onClick="On_AddChips"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                app:srcCompat="@drawable/ic_unchecked"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_serch"
+        app:layout_constraintStart_toStartOf="@+id/card_view_serch"
+        app:layout_constraintEnd_toEndOf="@id/card_view_serch"
+        >
+
+
+
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+
+    <LinearLayout
+        android:id="@+id/layout_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chip_group">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/ic_buttonbg"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@android:color/white"
+            android:onClick="On_Search"
+            android:padding="0dp"
+            android:text="Search Cities"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            android:elevation="@dimen/_3sdp"
+            android:outlineAmbientShadowColor="@color/shadowColor"
+            android:outlineSpotShadowColor="@color/shadowColor"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_current"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_login">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/ic_buttonbg"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@android:color/white"
+            android:onClick="On_CurrentCity"
+            android:padding="0dp"
+            android:text="Check Weather"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            android:elevation="@dimen/_3sdp"
+            android:outlineAmbientShadowColor="@color/shadowColor"
+            android:outlineSpotShadowColor="@color/shadowColor"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

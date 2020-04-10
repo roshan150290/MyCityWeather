@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--
+    <color name="colorPrimary">#00A19C</color>
+    <color name="colorPrimaryDark">#00635B</color>
+    <color name="colorAccent">#363636</color>
+-->
+
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#dddddd</color>
+    <color name="colorAccent">#40000000</color>
+    <color name="overlay_dark_50">#40000000</color>
+    <color name="material_blue">#4cd964</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="green_success">#155724</color>
+    <color name="shadowColor">#707070</color>
+    <color name="tabbar_color">#Ffffff</color>
+
+</resources>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:id="@+id/card_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:outlineAmbientShadowColor="@color/shadowColor"
+        android:outlineSpotShadowColor="@color/shadowColor"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                android:src="@drawable/background"
+                android:layout_marginLeft="@dimen/_5sdp"
+
+                />
+
+            <ImageView
+                android:id="@+id/img_flag"
+
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="@dimen/_12sdp"/>
+
+            <TextView
+                android:id="@+id/txt_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:text="Dubai"
+                android:textColor="#3D3935"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/layout_heading"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_sky"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@color/material_blue"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@+id/txt_item_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/layout_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_item_name"
+                app:layout_constraintStart_toEndOf="@+id/imageview"
+                android:layout_marginLeft="@dimen/_15sdp"
+                >
+
+                <TextView
+                    android:id="@+id/txt_dlv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity : "
+                    android:textColor="#3D3935"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#3D3935"
+                    android:id="@+id/humidity"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_toRightOf="@+id/txt_dlv"
+                    android:gravity="center"
+                    android:textStyle="normal"/>
+
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_temp_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_item_name"
+                app:layout_constraintStart_toEndOf="@+id/layout_heading"
+                android:layout_marginLeft="@dimen/_10sdp"
+                >
+
+                <TextView
+                    android:id="@+id/txt_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max : "
+                    android:textColor="#3D3935"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/temp_max"
+                    android:textColor="#3D3935"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_toRightOf="@+id/txt_"
+                    android:gravity="center"
+                    android:textStyle="normal"/>
+
+
+
+
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/r1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layout_heading"
+                app:layout_constraintStart_toEndOf="@+id/imageview"
+
+                android:layout_marginLeft="@dimen/_15sdp"
+                >
+
+                <TextView
+                    android:id="@+id/txt_dstn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wind : "
+                    android:textColor="#3D3935"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 KM"
+                    android:textSize="@dimen/_8sdp"
+                    android:id="@+id/wind"
+                    android:textColor="#3D3935"
+                    android:layout_toRightOf="@+id/txt_dstn"
+                    android:gravity="center"
+                    android:textStyle="normal"/>
+
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_temp_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layout_temp_max"
+                app:layout_constraintStart_toEndOf="@+id/layout_heading"
+                android:layout_marginLeft="@dimen/_10sdp"
+                >
+
+                <TextView
+                    android:id="@+id/txtmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Min : "
+                    android:textColor="#3D3935"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/txt_min"
+                    android:textColor="#3D3935"
+                    android:textSize="@dimen/_8sdp"
+                    android:layout_toRightOf="@+id/txtmin"
+                    android:gravity="center"
+                    android:textStyle="normal"/>
+
+
+
+
+
+            </RelativeLayout>
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/imageView36"
+                android:tint="@color/material_blue"
+                android:layout_marginRight="@dimen/_15sdp"
+                app:srcCompat="@drawable/ic_arrow_right" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
