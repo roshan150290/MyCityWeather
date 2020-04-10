@@ -108,8 +108,8 @@ class HourlyFragment : DialogFragment() {
             "%.0f°",
             fiveDayWeather!!.getMaxTemp()
         )
-        //animation_view?.setAnimation(AppUtil.getWeatherAnimation(fiveDayWeather!!.getWeatherId()))
-       // animation_view!!.playAnimation()
+        animation_view?.setAnimation(AppUtil.getWeatherAnimation(fiveDayWeather!!.getWeatherId()))
+       animation_view!!.playAnimation()
         typeface = Typeface.createFromAsset(activity!!.assets, "fonts/Vazir.ttf")
 
         close_button?.setOnClickListener(View.OnClickListener { close() })

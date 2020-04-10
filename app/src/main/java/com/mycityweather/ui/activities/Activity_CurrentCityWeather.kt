@@ -183,8 +183,8 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
     private fun requestWeather(cityName: String,api_key:String) {
         if (AppUtil.isNetworkConnected()) {
             presenter.performGetCurrentWeather(cityName,Constants.UNITS,defaultLang,api_key,applicationContext)
-           multiPresenter.performGetMultiDaysWeather(cityName,Constants.UNITS,defaultLang,5,api_key,applicationContext)
-           // fivePresenter.performGetFiveDaysWeather(cityName,Constants.UNITS,defaultLang,api_key,applicationContext)
+         //  multiPresenter.performGetMultiDaysWeather(cityName,Constants.UNITS,defaultLang,5,api_key,applicationContext)
+            fivePresenter.performGetFiveDaysWeather(cityName,Constants.UNITS,defaultLang,api_key,applicationContext)
 
         } else {
             toast("Please check internet connection")
@@ -275,7 +275,7 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
 
     override fun onGetFiveDaysWeatherSuccess(msg: FiveDayResponse?) {
 
-      /*  fiveDayWeathers = ArrayList()
+        fiveDayWeathers = ArrayList()
         val list: List<ItemHourly>? = msg?.list
         var day = 0
         for (item in list!!) {
@@ -287,7 +287,7 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
             fiveDayWeather.setDt(item.dt)
             fiveDayWeather.setMaxTemp(item.main.temp_max)
             fiveDayWeather.setMinTemp(item.main.temp_min)
-            fiveDayWeather.setTemp(item.dt.toDouble())
+            fiveDayWeather.setTemp(item.main.temp)
             fiveDayWeather.setColor(colors[0])
             fiveDayWeather.setColorAlpha(colorsAlpha[0])
             fiveDayWeather.setTimestampStart(AppUtil.getStartOfDayTimestamp(newCalendar!!))
@@ -299,7 +299,6 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
         mItemAdapter!!.clear()
         mItemAdapter!!.add(fiveDayWeathers)
 
-*/
 
 
 
@@ -309,7 +308,7 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
 
 
 
-        var day = 0
+        /*var day = 0
 
         val listItemHourlies: ArrayList<ItemHourly> = msg?.list as ArrayList<ItemHourly>
             for (itemHourly in listItemHourlies) {
@@ -333,7 +332,7 @@ class Activity_CurrentCityWeather : AppCompatActivity() , ConnectivityReceiver.C
             day++
 
         }
-
+*/
     }
 
     override fun onGetCurrentWeatherError(errorMessage: String?) {

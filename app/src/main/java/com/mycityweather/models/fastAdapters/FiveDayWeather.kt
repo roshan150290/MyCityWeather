@@ -158,7 +158,7 @@ class FiveDayWeather : AbstractItem<FiveDayWeather, FiveDayWeather.MyViewHolder>
            // card_view?.setCardBackgroundColor(colID)
             val colors = intArrayOf(
                 Color.TRANSPARENT,
-                Color.TRANSPARENT,
+                Color.GREEN,
                 //item.getColorAlpha(),
                 Color.TRANSPARENT
             )
